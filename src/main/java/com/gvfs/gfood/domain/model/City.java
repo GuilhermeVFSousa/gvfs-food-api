@@ -12,17 +12,17 @@ import javax.persistence.*;
 @ToString
 @RequiredArgsConstructor
 @Entity
-public class Cidade {
+public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "estado_id")
-    private Estado estado;
+    private State state;
 
 }

@@ -1,12 +1,10 @@
 package com.gvfs.gfood.jpa;
 
 import com.gvfs.gfood.GvfsFoodApiApplication;
-import com.gvfs.gfood.domain.model.Cozinha;
+import com.gvfs.gfood.domain.model.Kitchen;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
-
-import java.util.List;
 
 public class InclusaoCozinhaMain {
     public static void main(String[] args) {
@@ -16,13 +14,13 @@ public class InclusaoCozinhaMain {
 
         CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
 
-        Cozinha cozinha1 = new Cozinha();
-        cozinha1.setNome("Mexicana");
+        Kitchen kitchen1 = new Kitchen();
+        kitchen1.setNome("Mexicana");
 
-        Cozinha cozinha2 = new Cozinha();
-        cozinha2.setNome("Árabe");
+        Kitchen kitchen2 = new Kitchen();
+        kitchen2.setNome("Árabe");
 
-        cadastroCozinha.adicionar(cozinha1);
-        cadastroCozinha.adicionar(cozinha2);
+        cadastroCozinha.adicionar(kitchen1);
+        cadastroCozinha.adicionar(kitchen2);
     }
 }

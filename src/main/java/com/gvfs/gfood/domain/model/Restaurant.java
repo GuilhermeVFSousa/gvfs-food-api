@@ -1,11 +1,9 @@
 package com.gvfs.gfood.domain.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Getter
@@ -13,24 +11,32 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
-public class Permissao {
+public class Restaurant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
-    @Column
-    private String descricao;
+    @Column(name = "rate_shipping", nullable = false)
+    private BigDecimal rateShipping;
+
+    @ManyToOne
+    @JoinColumn(name = "kitchen_id")
+    private Kitchen kitchen;
+
+    @ManyToOne
+    @JoinColumn(name = "payment_option_id")
+    private PaymentOption paymentOption;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Permissao permissao = (Permissao) o;
-        return Objects.equals(id, permissao.id);
+        Restaurant that = (Restaurant) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override

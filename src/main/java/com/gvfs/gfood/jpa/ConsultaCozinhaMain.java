@@ -1,7 +1,7 @@
 package com.gvfs.gfood.jpa;
 
 import com.gvfs.gfood.GvfsFoodApiApplication;
-import com.gvfs.gfood.domain.model.Cozinha;
+import com.gvfs.gfood.domain.model.Kitchen;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
@@ -16,11 +16,11 @@ public class ConsultaCozinhaMain {
 
         CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
 
-        List<Cozinha> cozinhas = cadastroCozinha.listar();
+        List<Kitchen> kitchens = cadastroCozinha.listar();
 
-        for (Cozinha cozinha :
-                cozinhas) {
-            System.out.println(cozinha.getNome());
+        for (Kitchen kitchen :
+                kitchens) {
+            System.out.println(kitchen.getNome());
         }
     }
 }

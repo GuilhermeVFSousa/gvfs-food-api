@@ -13,21 +13,21 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
-public class Estado {
+public class State {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Estado estado = (Estado) o;
-        return Objects.equals(id, estado.id);
+        State state = (State) o;
+        return Objects.equals(id, state.id);
     }
 
     @Override

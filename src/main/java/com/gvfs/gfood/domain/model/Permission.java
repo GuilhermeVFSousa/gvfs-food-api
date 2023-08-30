@@ -13,22 +13,24 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
-@Table(name = "forma_pagamento")
-public class FormaPagamento {
+public class Permission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String descricao;
+    private String name;
+
+    @Column
+    private String description;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FormaPagamento that = (FormaPagamento) o;
-        return Objects.equals(id, that.id);
+        Permission permission = (Permission) o;
+        return Objects.equals(id, permission.id);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.gvfs.gfood.api.controller;
 
-import com.gvfs.gfood.domain.model.Estado;
-import com.gvfs.gfood.domain.repository.EstadoRepository;
+import com.gvfs.gfood.domain.model.State;
+import com.gvfs.gfood.domain.repository.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/estados")
-public class EstadoController {
+@RequestMapping("/states")
+public class StateController {
 
     @Autowired
-    private EstadoRepository estadoRepository;
+    private StateRepository stateRepository;
 
     @GetMapping
-    List<Estado> listar() {
-        return estadoRepository.listar();
+    List<State> findAll() {
+        return stateRepository.findAll();
     }
 }
